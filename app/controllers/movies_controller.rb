@@ -1,3 +1,5 @@
+require 'pry'
+
 class MoviesController < ApplicationController
   def index
     @movies = Movie.all
@@ -16,6 +18,7 @@ class MoviesController < ApplicationController
   end
 
   def create
+    binding.pry
     @movie = Movie.new(movie_params)
 
     if @movie.save
@@ -27,8 +30,7 @@ class MoviesController < ApplicationController
 
   def update
     @movie = Movie.find(params[:id])
-
-    if movie.update_attributes(movie_params)
+    if @movie.update_attributes(movie_params)
       redirect_to movie_path(@movie)
     else
       render :edit
@@ -45,8 +47,9 @@ class MoviesController < ApplicationController
 
   def movie_params
     params.require(:movie).permit(
-      :title, :release_date, :director, :runtime_im_mintues, :poster_image_url, :description
+      :title, :release_date, :director, :runtime_in_minutes, :poster_image_url, :description
       )
   end
+
 
 end

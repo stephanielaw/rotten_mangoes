@@ -43,3 +43,8 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+#carrierwave - uploads photos
+  gem 'carrierwave'
+
+  gem 'pry-byebug'
