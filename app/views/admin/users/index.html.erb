@@ -1,0 +1,12 @@
+<h1>This is the index of admin/users!</h1>
+
+<h1>all users</h1>
+
+
+<% @users.each do |user| %>
+<h3><%= link_to user.email, admin_user_path(user) %></h3>
+
+ 
+<% end %>
+
+
