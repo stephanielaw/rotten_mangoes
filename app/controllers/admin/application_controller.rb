@@ -1,11 +1,16 @@
 class Admin::ApplicationController < ApplicationController
 
-  before_filter :check_admin
+  #before_filter :check_if_admin
 
-  private
+  #private
 
-  def check_admin
-    Rails.logger.info("---- Ima checking for admin rights!")
-  end
+  #def check_if_admin
+  ##  if self.admin?
+  #  else
+    # or you can use the authenticate_user! devise provides to only allow signed_in users
+  #  raise 'Please sign in!'
+  #  end
+  #end
 
-end
+#end
+
